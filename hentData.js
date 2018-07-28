@@ -1,8 +1,8 @@
 
 //Map variables
-L.mapbox.accessToken = 'pk.eyJ1IjoiZXdoIiwiYSI6ImNpZ2x4aGxiajAyMWZ2MWx6cm4wbmM3ODEifQ.dsyuEGi0oOvSxmKRvWgbLg';
+L.mapbox.accessToken = 'pk.eyJ1IjoiZXdoIiwiYSI6ImNpZ2x4aGxiajAyMWZ2MWx6cm4wbmM3ODEifQ.dsyuEGi0oOvSxmKRvWgbLg'
 
-let  map = L.mapbox.map('map').setView([55.1089, 12.3545], 6);
+let map = L.mapbox.map('map').setView([55.1089, 12.3545], 6);
 let dataset = {};
 
 const colourArray = d3.schemeRdYlBu[10];
@@ -11,7 +11,7 @@ let stations = L.layerGroup().addTo(map);
 let theme = "";
 
 const displayText = {
-    "title": "Det Danske vejr",
+    "title": "Det Danske vejr er noget lort",
     "intro": "Meteorologisk institut DMI offentliggøre hvert 10’ende år et særlig gennemarbejdet dataset der kaldes reference data <a href='http://www.dmi.dk/fileadmin/Rapporter/TR/tr13-08.pdf ' title=\"Initiates file download\" target=\"_blank\" >(http://www.dmi.dk/fileadmin/Rapporter/TR/tr13-08.pdf )</a>. Det aktuelle reference data set er basseret på årene 2001 til 2010. og kaldes reference data eller 10 års normalen. Ud over 10 års normalen findes der også et 30 års normal.\n" +
     "De data du kan arbejde med her er det aktuelle 10 års altså basseret på årene 2001 til 2010.  Du har adgang til at arbejde med nedbør eller solskinstimer.\n" +
     "Det første du skal vælge er hvilken slags data du vil arbejde med og så den måned du vil arbejde med. \n" +
