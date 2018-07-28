@@ -6,14 +6,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/dc.css">
   <title>Sampling</title>
 </head>
-<body>
 
+<body>
+    <form onsubmit="return false">
+             <div class="form-group form-row">
+                <div class="col">
+                    <label class="form-control form-control-sm" for="meanInput">Mean</label>
+                </div> <div class="col">
+                    <input type="number" class="form-control form-control-sm" id="meanInput" value=20>
+                </div> <div class="col">
+                    <label class="form-control form-control-sm" for="varInput">Variance : </label>
+                </div> <div class="col">
+                    <input type="number" class="form-control form-control-sm" id="varInput" value=10>
+                 </div>
+            </div>
+            <button type="submit" class="btn btn-primary" onClick=generatePopulation() >Beregn</button>
+        </form>
+
+    <div class="container" id="test"></div>
+
+    <div class="container mt-2">
+        Calculated calues
+          <div class="container mt-2">
+        <form onsubmit="return false">
+             <div class="form-group form-row">
+                <div class="col">
+                    <label class="form-control form-control-sm" for="meanInput">Mean</label>
+                </div> <div class="col">
+                    <input type="number" class="form-control form-control-sm" id="meanCalc">
+                </div> <div class="col">
+                    <label class="form-control form-control-sm" for="varInput">Variance : </label>
+                </div> <div class="col">
+                    <input type="number" class="form-control form-control-sm" id="varCalc" >
+                 </div>
+            </div>
+        </form>
+
+    </div>
+
+
+    </div>
     <script src="js/jquery.slim.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script> src="js/d3.js"</script>
-    <script> src="js/dc.js"</script>
+    <script src="js/d3.js"></script>
+    <script src="js/crossfilter.js"></script>
+    <script src="js/dc.js"></script>
+    <script src="main.js"></script>
+
+
 </body>
 </html>
