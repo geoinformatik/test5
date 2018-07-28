@@ -1,19 +1,18 @@
 
-/*jslint vars: true, plusplus: true, devel: true, nomen: true, indent: 4, maxerr: 50 */
-
 /*global d3, dc, crossfilter*/
 /* eslint-env  jquery */
 /* eslint no-console: off */
 
 dc.config.defaultColors('Categorical');
 var chart = dc.barChart("#test");
+var data;
 
-function generatePopulation(){
-    const dataMean=document.getElementById('meanInput').value;
-    const dataStdDivr=Math.sqrt(document.getElementById('varInput').value);
+function generatePopulation() {
+    const dataMean = document.getElementById('meanInput').value;
+    const dataStdDivr = Math.sqrt(document.getElementById('varInput').value);
 
 
-    var data = d3.range(200000).map(function() {
+    data = d3.range(200000).map(function() {
         return Math.round(d3.randomNormal(dataMean, dataStdDivr)());
     });
 
@@ -38,8 +37,26 @@ function generatePopulation(){
     document.getElementById('meanCalc').value= d3.mean(data)
 }
 
+function getRandom(length) { return Math.floor(Math.random()*(length)); }
 
+function getRandomSample(array, size) {
+    var length = array.length;
 
+    for(var i = size; i--;) {
+        var index = getRandom(length);
+        var temp = array[index];
+        array[index] = array[i];
+        array[i] = temp;
+    }
 
+    return array.slice(0, size);
+}
 
+function samplePopulation(){
+    const sampleSize=document.getElementById('sampleSize').value;
+    const numberOfSampels=document.getElementById('numberOfSampels').value;
+    var sampleArray = d3.range(numberOfSampels).map(function() {
+        return d3.mean(getRandomSample(data, sampleSize));});
+    console.log(sampleArray)
+}
 

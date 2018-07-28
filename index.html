@@ -11,7 +11,8 @@
 </head>
 
 <body>
-    <form onsubmit="return false">
+     <div class="container mt-2">
+        <form onsubmit="return false">
              <div class="form-group form-row">
                 <div class="col">
                     <label class="form-control form-control-sm" for="meanInput">Mean</label>
@@ -23,32 +24,49 @@
                     <input type="number" class="form-control form-control-sm" id="varInput" value=10>
                  </div>
             </div>
-            <button type="submit" class="btn btn-primary" onClick=generatePopulation() >Beregn</button>
+            <button type="submit" class="btn btn-primary" onClick=generatePopulation() > Beregn</button>
         </form>
+    </div>
 
     <div class="container" id="test"></div>
 
     <div class="container mt-2">
         Calculated calues
-          <div class="container mt-2">
+        <div class="container mt-2">
+            <form onsubmit="return false">
+                <div class="form-group form-row">
+                    <div class="col">
+                        <label class="form-control form-control-sm" for="meanCalc">Mean</label>
+                    </div> <div class="col">
+                        <input type="number" class="form-control form-control-sm" id="meanCalc">
+                    </div> <div class="col">
+                        <label class="form-control form-control-sm" for="varCalc">Variance : </label>
+                    </div> <div class="col">
+                        <input type="number" class="form-control form-control-sm" id="varCalc" >
+                     </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container mt-2">
+        Sampling
         <form onsubmit="return false">
              <div class="form-group form-row">
                 <div class="col">
-                    <label class="form-control form-control-sm" for="meanInput">Mean</label>
+                    <label class="form-control form-control-sm" for="sampleSize">Sampel size</label>
                 </div> <div class="col">
-                    <input type="number" class="form-control form-control-sm" id="meanCalc">
+                    <input type="number" class="form-control form-control-sm" id="sampleSize" value=100>
                 </div> <div class="col">
-                    <label class="form-control form-control-sm" for="varInput">Variance : </label>
+                    <label class="form-control form-control-sm" for="numberOfSampels">Number of sampels : </label>
                 </div> <div class="col">
-                    <input type="number" class="form-control form-control-sm" id="varCalc" >
+                    <input type="number" class="form-control form-control-sm" id="numberOfSampels" value=100>
                  </div>
             </div>
+            <button type="submit" class="btn btn-primary" onClick=samplePopulation() > Sample</button>
         </form>
-
     </div>
 
-
-    </div>
     <script src="js/jquery.slim.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
