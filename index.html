@@ -61,10 +61,30 @@
                     <label class="form-control form-control-sm" for="numberOfSampels">Number of sampels : </label>
                 </div> <div class="col">
                     <input type="number" class="form-control form-control-sm" id="numberOfSampels" value=100>
+                 </div> <div class="col">
+                    <label class="form-control form-control-sm" for="marginOfError">Margin of error +/- : </label>
+                </div> <div class="col">
+                    <input type="number" class="form-control form-control-sm" id="marginOfError" value=2>
                  </div>
             </div>
             <button type="submit" class="btn btn-primary" onClick=samplePopulation() > Sample</button>
         </form>
+    </div>
+  <div class="container mt-2">
+        Sampel errors
+        <form onsubmit="return false">
+             <div class="form-group form-row">
+                <div class="col">
+                    <label class="form-control form-control-sm" for="goodSampels">Number of sampels within margin of errors :</label>
+                </div> <div class="col">
+                    <input type="number" class="form-control form-control-sm" id="goodSampels" value=100>
+                </div> <div class="col">
+                    <label class="form-control form-control-sm" for="badSampels">Number of sampels NOT within margin of errors : </label>
+                </div> <div class="col">
+                    <input type="number" class="form-control form-control-sm" id="badSampels" value=100>
+                 </div>
+            </div>
+         </form>
     </div>
 
     <script src="js/jquery.slim.min.js"></script>

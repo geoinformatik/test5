@@ -53,10 +53,25 @@ function getRandomSample(array, size) {
 }
 
 function samplePopulation(){
+    let goodSampels = 0;
+    let badSampels = 0;
     const sampleSize=document.getElementById('sampleSize').value;
     const numberOfSampels=document.getElementById('numberOfSampels').value;
+    const popMean = document.getElementById('meanCalc').value;
+    const marginOfError = document.getElementById('marginOfError').value
     var sampleArray = d3.range(numberOfSampels).map(function() {
         return d3.mean(getRandomSample(data, sampleSize));});
-    console.log(sampleArray)
+    console.log(sampleArray);
+    var arrayLength = sampleArray.length;
+    for (var i = 0; i < arrayLength; i++) {
+        if (Math.abs(sampleArray[i] - popMean) > marginOfError) {
+            badSampels++
+        }else{
+            goodSampels++
+        }
+    }
+    document.getElementById('goodSampels').value= goodSampels;
+    document.getElementById('badSampels').value= badSampels;
+
 }
 
