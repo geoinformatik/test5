@@ -12,7 +12,7 @@ function generatePopulation() {
     const dataStdDivr = Math.sqrt(document.getElementById('varInput').value);
 
 
-    data = d3.range(200000).map(function() {
+    data = d3.range(5000).map(function() {
         return Math.round(d3.randomNormal(dataMean, dataStdDivr)());
     });
 
